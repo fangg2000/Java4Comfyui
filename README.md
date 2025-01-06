@@ -1,2 +1,4 @@
 # Java4Comfyui
 Java通过websocket调用comfyui
+
+在comfyui节点界面，按键盘12并选择网络（可通过选择XHR过滤），执行comfyui时会生成一个新的请求"prompt"，复制请求参数内容(取prompt部分)覆盖项目resource下的s3d_prompt.json。此项目是对java通过调用comfyui websocket传递参数的简单封装，只要是comfyui安装有的插件，都可以修改后再执行。
