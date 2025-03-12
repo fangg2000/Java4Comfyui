@@ -1,8 +1,8 @@
-package fangg.bean.comfyui;
+package com.fangg.bgm.api.bean.comfyui;
 
 import java.util.Map;
 
-import fangg.util.UuidUtil;
+import com.xclj.common.util.UuidUtil;
 
 public class SendParam {
 

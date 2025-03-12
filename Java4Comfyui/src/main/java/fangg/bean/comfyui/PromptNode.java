@@ -1,4 +1,4 @@
-package fangg.bean.comfyui;
+package com.fangg.bgm.api.bean.comfyui;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -71,10 +71,12 @@ public class PromptNode {
     }
     
     // 动态解析引用的 key
-    public void linkInput(String inputKey, PromptNode promptNode, int outputIndex) {
+    public boolean linkInput(String inputKey, PromptNode promptNode, int outputIndex) {
     	if (promptNode != null) {
         	inputs.put(inputKey, new Object[]{promptNode.getNodeId(), outputIndex});
+        	return true;
 		}
+    	return false;
     }
     
 }

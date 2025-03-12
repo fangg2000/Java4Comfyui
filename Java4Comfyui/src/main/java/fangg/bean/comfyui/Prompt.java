@@ -1,4 +1,4 @@
-package fangg.bean.comfyui;
+package com.fangg.bgm.api.bean.comfyui;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -54,9 +54,29 @@ public class Prompt {
     
     // 添加一个节点
     public void addNode(PromptNode node) {
-    	String nodeId = nextNodeId();
-    	node.setNodeId(nodeId);
+    	String nodeId;
+    	if (node.getNodeId() == null) {
+    		nodeId = nextNodeId();
+        	node.setNodeId(nodeId);
+		} else {
+			nodeId = node.getNodeId();
+		}
     	nodes.put(nodeId, node);
+    }
+    
+    // 追加一个新节点
+    public void appendNode(PromptNode node) {
+    	String nodeId;
+    	nodeId = nextNodeId();
+		node.setNodeId(nodeId);
+    	nodes.put(nodeId, node);
+    }
+    
+    // 删除一个节点
+    public void removeNode(String nodeId) {
+    	if (nodes.containsKey(nodeId)) {
+    		nodes.remove(nodeId);
+		}
     }
 
     // 生成最终的 JSON 结构
